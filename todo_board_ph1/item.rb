@@ -4,7 +4,7 @@ class Item
         dates = date_string.split("-")
 
             year = dates[0]
-            month = dates [1]
+            month = dates[1]
             day = dates[2]
 
             if year.length < 4 || month.length < 2 || day.length < 2
@@ -15,17 +15,18 @@ class Item
                 return false
             end
 
-        return true
+        return date_string
     end
     
-    p Item.valid_date?('2019-10-25') # true
-    p Item.valid_date?('1912-06-23') # true
-    p Item.valid_date?('2018-13-20') # false
-    p Item.valid_date?('2018-12-32') # false
-    p Item.valid_date?('10-25-2019') # false
 
-
-
+        def initialize(title, deadline, description)
+            @title = title
+            @description = description
+            @deadline = Item.valid_date?(deadline)
+                if @deadline == false
+                    raise "error"
+                end
+        end   
 
 
 end
