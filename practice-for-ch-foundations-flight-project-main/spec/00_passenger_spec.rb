@@ -56,8 +56,8 @@ describe "Passenger" do
 
         expect(passenger.has_flight?("J512")).to eq(true)
         expect(passenger.has_flight?("AA128")).to eq(true)
-        expect(passenger.has_flight?("aa128")).to eq(true)
-      end
+          expect(passenger.has_flight?("aa128")).to eq(true)
+        end
     end
 
     context "when @flight_numbers does not contain the given number" do
