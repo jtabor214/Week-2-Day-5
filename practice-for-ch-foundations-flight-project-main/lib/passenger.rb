@@ -16,6 +16,10 @@ class Passenger
     end
 
     def add_flight(string)
+    
+        if has_flight?(string) == false
+            @flight_numbers << string.upcase
+        end
         
     end
 end
